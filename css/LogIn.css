@@ -1,0 +1,14 @@
+body {
+    min-height: 100vh;
+}
+
+#email-login-form,
+#owner-login-form {
+    display: none;
+}
+
+.indicator-arrow::before {
+    content: '⬅';
+    margin-right: 8px;
+    color: #0d6efd;
+}

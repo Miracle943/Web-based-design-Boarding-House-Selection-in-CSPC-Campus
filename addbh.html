@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Owner's Boarding House</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Website Icon-->
+    <link rel="icon" type="image/png" href="img/logo/CSPC_logo.png">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="img/Legal Documents/Owner profile/sylvia.jpeg" width="30" height="30" alt="CSPC" class="me-3 rounded-circle"> Welcome, Owner
+                </a>
+
+                <!-- Toggler for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+                <!-- Nav links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="addbh.html">Boarding House</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="ownerprofile.html">Profile</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a href="LogIn.html" class="btn btn-primary rounded-pill px-4 py-1" data-bs-toggle="modal" data-bs-target="#logoutModal">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Warn the user if he/she is going to log out -->
+        <section class="modal fade" tabindex="-1" id="logoutModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Warning:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning text-center" role="alert">
+                            Are you sure you want to log out?
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="LogIn.html" class="btn btn-primary">Yes</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Warn the user if he/she is going to remove the added boarding house -->
+        <section class="modal fade" tabindex="-1" id="removebhModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Warning:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning text-center" role="alert">
+                            Are you sure you want to remove the added boarding house?
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-primary" data-bs-dismiss="modal">Yes</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+
+        <h2 class="mb-4 text-center">
+            <i class="bi bi-house-door-fill me-2"></i> Add Boarding House:</h2>
+
+        <!-- List Of Boarding House -->
+        <div class="list-group">
+
+            <!-- Abonita-Sawchuk Boarding House -->
+            <div class="list-group-item p-3 mb-3 rounded border shadow-sm">
+                <div class="row g-3 align-items-center">
+
+                    <!-- Close Button (top-right small X) -->
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" data-bs-toggle="modal" data-bs-target="#removebhModal"></button>
+
+                    <!-- Image -->
+                    <div class="col-md-2">
+                        <img src="img/AbonitaSawchuk/2.jpg" alt="Abonita-Sawchuk Boarding House" class="img-fluid rounded" style="object-fit: cover;" />
+                    </div>
+
+                    <!-- Name, Address, Details -->
+                    <div class="col-md-5">
+                        <h4 class="sm-1 fw-semibold">
+                            <a data-bs-toggle="collapse" class="text-decoration-none text-dark">Abonita-Sawchuk Boarding House</a>
+                        </h4>
+                        <small class="text-muted d-block mb-1"><a data-bs-toggle="collapse" class="text-decoration-none text-muted fs-5">San Nicolas, Nabua, Camarines Sur</a></small>
+                    </div>
+
+                    <!-- Switch & Remove Buttons -->
+                    <div class="col-md-5 d-flex justify-content-end align-items-center pe-2">
+                        <button type="button" class="btn btn-primary rounded-pill px-4 shadow-sm me-2" data-bs-toggle="modal" data-bs-target="#sawchukbhModal"><i class="bi bi-pencil-square me-2"></i>Edit</button>
+                        <a href="abonita_room.html" class="btn btn-success rounded-pill px-4 shadow-sm me-2"><i class="bi bi-door-open me-2"></i>Rooms</a>
+                        <button type="button" class="btn btn-danger rounded-pill px-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#removebhModal"><i class="bi bi-trash me-2"></i>Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sylvia Boarding House Rental -->
+            <div class="list-group-item p-3 mb-3 rounded border shadow-sm">
+                <div class="row g-3 align-items-center">
+
+                    <!-- Close Button (top-right small X) -->
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" data-bs-toggle="modal" data-bs-target="#removebhModal"></button>
+
+                    <!-- Image -->
+                    <div class="col-md-2">
+                        <img src="img/slyviabh/2.jpg" alt="Sylvia Boarding House Rental" class="img-fluid rounded" style="object-fit: cover;" />
+                    </div>
+
+                    <!-- Name, Address, Details -->
+                    <div class="col-md-5">
+                        <h4 class="sm-1 fw-semibold">
+                            <a data-bs-toggle="collapse" class="text-decoration-none text-dark">Sylvia Boarding House Rental</a>
+                        </h4>
+                        <small class="text-muted d-block mb-1"><a data-bs-toggle="collapse" class="text-decoration-none text-muted fs-5">San Nicolas, Nabua, Camarines Sur</a></small>
+                    </div>
+
+                    <!-- Switch & Remove Buttons -->
+                    <div class="col-md-5 d-flex justify-content-end align-items-center pe-2">
+                        <button type="button" class="btn btn-primary rounded-pill px-4 shadow-sm me-2" data-bs-toggle="modal" data-bs-target="#sylviabhModal"><i class="bi bi-pencil-square me-2"></i>Edit</button>
+                        <a href="sylvia_room.html" class="btn btn-success rounded-pill px-4 shadow-sm me-2"><i class="bi bi-door-open me-2"></i>Rooms</a>
+                        <button type="button" class="btn btn-danger rounded-pill px-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#removebhModal"><i class="bi bi-trash me-2"></i>Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more boarding houses as needed -->
+
+            <!-- Action Buttons -->
+            <div class="text-center mt-5">
+                <button type="button" class="btn btn-success btn-lg rounded-pill me-3 px-5" data-bs-toggle="modal" data-bs-target="#addbhModal"><i class="bi bi-plus-circle me-2"></i>Add Boarding House</button>
+            </div>
+
+            <!-- Abonita Edit Modal -->
+            <div class="modal fade" id="sawchukbhModal" tabindex="-1" aria-labelledby="sawchukModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Header -->
+                        <div class="modal-header bg-primary">
+                            <h5 class="modal-title text-white" id="bhModalLabel">Edit Boarding House</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="modal-body">
+                            <form>
+                                <!-- Change the photo of the boarding house -->
+                                <div class="mb-3 text-center">
+                                    <img src="img/AbonitaSawchuk/2.jpg" class="img-fluid rounded mb-2" alt="Boarding House Photo" style="max-height:200px;">
+                                    <label for="bhPhoto" class="form-label d-block text-start mt-2">Edit New Photo</label>
+                                    <input class="form-control" type="file" id="bhPhoto">
+                                </div>
+
+                                <!--Insert 3 photos-->
+                                <div class="mb-3 text-center">
+                                    <label for="bhPhoto" class="form-label d-block text-start mt-2">Insert 3 Photos</label>
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                </div>
+
+                                <!-- Boarding House Name -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Boarding House Name</label>
+                                    <input type="text" class="form-control" id="bhName" placeholder="Enter boarding house name" value="Abonita-Sawchuk Boarding House">
+                                </div>
+
+                                <!-- Price -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Rent Price</label>
+                                    <input type="Number" class="form-control" id="bhName" placeholder="Enter rent price" value="1500">
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="bhName" placeholder="Enter Phone Number" value="09461890880">
+                                </div>
+
+                                <!-- Google Map Location -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Google Map Location</label>
+                                    <input type="text" class="form-control" id="bhName" placeholder="Enter the link of the boarding house from google maps" value="https://maps.app.goo.gl/p3smsn32qwa8J4Qe9">
+                                </div>
+
+                                <!-- Free Amenities -->
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-check-circle-fill me-2"></i> Free Amenities</label>
+                                    <div class="row">
+                                        <!-- 1st column-->
+                                        <div class="col-6">
+
+                                            <!--Wifi icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="wififree" checked>
+                                                <label class="form-check-label" for="wififree"><i class="bi bi-wifi me-2"></i> Wi-Fi</label>
+                                            </div>
+
+                                            <!--Water Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="waterfree" checked>
+                                                <label class="form-check-label" for="waterfree"><i class="bi bi-droplet me-2"></i> 24/7 Water Supply</label>
+                                            </div>
+
+                                            <!--Electricity Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="electricityfree" checked>
+                                                <label class="form-check-label" for="electricityfree"><i class="bi bi-lightning me-2"></i> Electricity</label>
+                                            </div>
+
+                                            <!--Comfort Room Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="crfree" checked>
+                                                <label class="form-check-label" for="crfree"><i class="bi bi-people me-2"></i> Comfort Room (CR)
+                                            </label>
+                                            </div>
+
+                                            <!--Aircon Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Airconfree">
+                                                <label class="form-check-label" for="Airconfree"><i class="bi bi-snow me-2"></i> Air Conditioner</label>
+                                            </div>
+
+                                            <!--Electric Fan Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="efanfree">
+                                                <label class="form-check-label" for="efanfree"><i class="bi bi-wind me-2"></i> Electric Fan</label>
+                                            </div>
+
+                                            <!--Laundry Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="LaundryAreafree">
+                                                <label class="form-check-label" for="LaundryAreafree"><i class="bi bi-basket me-2"></i> Laundry Area</label>
+                                            </div>
+
+                                            <!--Study Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="StudyAreafree" checked>
+                                                <label class="form-check-label" for="StudyAreafree"><i class="bi bi-book me-2"></i> Study Area</label>
+                                            </div>
+
+                                            <!--Refrigerator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Refrigeratorfree">
+                                                <label class="form-check-label" for="Refrigeratorfree"><i class="bi bi-snow2 me-2"></i> Refrigerator</label>
+                                            </div>
+
+                                            <!--Security Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Securefree" checked>
+                                                <label class="form-check-label" for="Securefree"><i class="bi bi-person-badge me-2"></i> Caretaker</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2nd column-->
+                                        <div class="col-6">
+
+                                            <!--Fire Extinguisher Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExtinguisherfree" checked>
+                                                <label class="form-check-label" for="fireExtinguisherfree"><i class="bi bi-fire me-2"></i> Fire Extinguisher</label>
+                                            </div>
+
+                                            <!--Fire Alarm System Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FireAlarmSystemfree" checked>
+                                                <label class="form-check-label" for="FireAlarmSystemfree"><i class="bi bi-exclamation-circle me-2"></i> Fire Alarm System</label>
+                                            </div>
+
+                                            <!--Fire Exit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExitfree">
+                                                <label class="form-check-label" for="fireExitfree"><i class="bi bi-door-open me-2"></i> Fire Exit</label>
+                                            </div>
+
+                                            <!--First Aid Kit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FirstAidKitfree">
+                                                <label class="form-check-label" for="FirstAidKitfree"><i class="bi bi-heart-pulse me-2"></i> First Aid Kit</label>
+                                            </div>
+
+                                            <!--CCTV Cameras Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cctvfree" checked>
+                                                <label class="form-check-label" for="cctvfree"><i class="bi bi-camera-video me-2"></i> CCTV Cameras</label>
+                                            </div>
+
+                                            <!--Parking Space Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="parkingSpacefree">
+                                                <label class="form-check-label" for="parkingSpacefree"><i class="bi bi-car-front me-2"></i> Parking Space</label>
+                                            </div>
+
+                                            <!--Visitor Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="VisitorAreafree" checked>
+                                                <label class="form-check-label" for="VisitorAreafree"><i class="bi bi-person-walking me-2"></i> Visitor Area</label>
+                                            </div>
+
+                                            <!--Balcony Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Balconyfree">
+                                                <label class="form-check-label" for="Balconyfree"><i class="bi bi-building me-2"></i> Balcony</label>
+                                            </div>
+
+                                            <!--Generator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Generatorfree">
+                                                <label class="form-check-label" for="Generatorfree"><i class="bi bi-lightning-charge me-2"></i> Generator</label>
+                                            </div>
+
+                                            <!--Trash Bins Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="TrashBinsfree">
+                                                <label class="form-check-label" for="TrashBinsfree"><i class="bi bi-trash me-2"></i> Trash Bins</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Paid Amenities -->
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-cash-stack me-2"></i> Paid Amenities</label>
+                                    <div class="row">
+                                        <!-- 1st column-->
+                                        <div class="col-6">
+
+                                            <!--Wifi icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="wifi1">
+                                                <label class="form-check-label" for="wifi1"><i class="bi bi-wifi me-2"></i> Wi-Fi</label>
+                                            </div>
+
+                                            <!--Water Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="water1">
+                                                <label class="form-check-label" for="water1"><i class="bi bi-droplet me-2"></i> 24/7 Water Supply</label>
+                                            </div>
+
+                                            <!--Electricity Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="electricity1">
+                                                <label class="form-check-label" for="electricity1"><i class="bi bi-lightning me-2"></i> Electricity</label>
+                                            </div>
+
+                                            <!--Comfort Room Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cr1">
+                                                <label class="form-check-label" for="cr1"><i class="bi bi-people me-2"></i> Comfort Room (CR)
+                                            </label>
+                                            </div>
+
+                                            <!--Aircon Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Aircon1">
+                                                <label class="form-check-label" for="Aircon1"><i class="bi bi-snow me-2"></i> Air Conditioner</label>
+                                            </div>
+
+                                            <!--Electric Fan Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="efan1">
+                                                <label class="form-check-label" for="efan1"><i class="bi bi-wind me-2"></i> Electric Fan</label>
+                                            </div>
+
+                                            <!--Laundry Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="LaundryArea1">
+                                                <label class="form-check-label" for="LaundryArea1"><i class="bi bi-basket me-2"></i> Laundry Area</label>
+                                            </div>
+
+                                            <!--Study Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="StudyArea1">
+                                                <label class="form-check-label" for="StudyArea1"><i class="bi bi-book me-2"></i> Study Area</label>
+                                            </div>
+
+                                            <!--Refrigerator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Refrigerator1">
+                                                <label class="form-check-label" for="Refrigerator1"><i class="bi bi-snow2 me-2"></i> Refrigerator</label>
+                                            </div>
+
+                                            <!--Security Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Secure1">
+                                                <label class="form-check-label" for="Secure1"><i class="bi bi-person-badge me-2"></i> Caretaker</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2nd column-->
+                                        <div class="col-6">
+
+                                            <!--Fire Extinguisher Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExtinguisher1">
+                                                <label class="form-check-label" for="fireExtinguisher1"><i class="bi bi-fire me-2"></i> Fire Extinguisher</label>
+                                            </div>
+
+                                            <!--Fire Alarm System Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FireAlarmSystem1">
+                                                <label class="form-check-label" for="FireAlarmSystem1"><i class="bi bi-exclamation-circle me-2"></i> Fire Alarm System</label>
+                                            </div>
+
+                                            <!--Fire Exit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExit1">
+                                                <label class="form-check-label" for="fireExit1"><i class="bi bi-door-open me-2"></i> Fire Exit</label>
+                                            </div>
+
+                                            <!--First Aid Kit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FirstAidKit1">
+                                                <label class="form-check-label" for="FirstAidKit1"><i class="bi bi-heart-pulse me-2"></i> First Aid Kit</label>
+                                            </div>
+
+                                            <!--CCTV Cameras Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cctv1">
+                                                <label class="form-check-label" for="cctv1"><i class="bi bi-camera-video me-2"></i> CCTV Cameras</label>
+                                            </div>
+
+                                            <!--Parking Space Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="parkingSpace1">
+                                                <label class="form-check-label" for="parkingSpace1"><i class="bi bi-car-front me-2"></i> Parking Space</label>
+                                            </div>
+
+                                            <!--Visitor Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="VisitorArea1">
+                                                <label class="form-check-label" for="VisitorArea1"><i class="bi bi-person-walking me-2"></i> Visitor Area</label>
+                                            </div>
+
+                                            <!--Balcony Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Balcony1">
+                                                <label class="form-check-label" for="Balcony1"><i class="bi bi-building me-2"></i> Balcony</label>
+                                            </div>
+
+                                            <!--Generator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Generator1">
+                                                <label class="form-check-label" for="Generator1"><i class="bi bi-lightning-charge me-2"></i> Generator</label>
+                                            </div>
+
+                                            <!--Trash Bins Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="TrashBins1">
+                                                <label class="form-check-label" for="TrashBins1"><i class="bi bi-trash me-2"></i> Trash Bins</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Location -->
+                                <div class="mb-3">
+                                    <label for="bhLocation" class="form-label">Location</label>
+                                    <input type="text" class="form-control" id="bhLocation" placeholder="Enter location" value="San Nicolas, Nabua, Camarines Sur">
+                                </div>
+
+                                <!-- Description -->
+                                <div class="mb-3">
+                                    <label for="bhDetails" class="form-label">Description</label>
+                                    <textarea class="form-control" id="bhDetails" rows="3" placeholder="Enter additional details">Located in the heart of Nabua, our boarding house offers a comfortable and safe place to stay for students and young professionals. Enjoy cozy rooms, a friendly community, and convenient access to nearby schools and essential services. Whether you’re here for short-term or long-term stay, Abonita-Sawchuk is your home away from home.</textarea>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sylvia Edit Modal -->
+            <div class="modal fade" id="sylviabhModal" tabindex="-1" aria-labelledby="sawchukModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Header -->
+                        <div class="modal-header bg-primary">
+                            <h5 class="modal-title text-white" id="bhModalLabel">Edit Boarding House</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="modal-body">
+                            <form>
+                                <!-- Change the photo of the boarding house -->
+                                <div class="mb-3 text-center">
+                                    <img src="img/slyviabh/2.jpg" class="img-fluid rounded mb-2" alt="Boarding House Photo" style="max-height:200px;">
+                                    <label for="bhPhoto" class="form-label d-block text-start mt-2">Edit New Photo</label>
+                                    <input class="form-control" type="file" id="bhPhoto">
+                                </div>
+
+                                <!--Insert 3 photos-->
+                                <div class="mb-3 text-center">
+                                    <label for="bhPhoto" class="form-label d-block text-start mt-2">Insert 3 Photos</label>
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                </div>
+
+                                <!-- Boarding House Name -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Boarding House Name</label>
+                                    <input type="text" class="form-control" id="bhName" placeholder="Enter boarding house name" value="Abonita-Sawchuk Boarding House">
+                                </div>
+
+                                <!-- Price -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Rent Price</label>
+                                    <input type="Number" class="form-control" id="bhName" placeholder="Enter rent price" value="1500">
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="bhName" placeholder="Enter Phone Number" value="09461890880">
+                                </div>
+
+                                <!-- Google Map Location -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Google Map Location</label>
+                                    <input type="text" class="form-control" id="bhName" placeholder="Enter the link of the boarding house from google maps" value="https://maps.app.goo.gl/p3smsn32qwa8J4Qe9">
+                                </div>
+
+                                <!-- Free Amenities -->
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-check-circle-fill me-2"></i> Free Amenities</label>
+                                    <div class="row">
+                                        <!-- 1st column-->
+                                        <div class="col-6">
+
+                                            <!--Wifi icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="wififree" checked>
+                                                <label class="form-check-label" for="wififree"><i class="bi bi-wifi me-2"></i> Wi-Fi</label>
+                                            </div>
+
+                                            <!--Water Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="waterfree" checked>
+                                                <label class="form-check-label" for="waterfree"><i class="bi bi-droplet me-2"></i> 24/7 Water Supply</label>
+                                            </div>
+
+                                            <!--Electricity Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="electricityfree" checked>
+                                                <label class="form-check-label" for="electricityfree"><i class="bi bi-lightning me-2"></i> Electricity</label>
+                                            </div>
+
+                                            <!--Comfort Room Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="crfree" checked>
+                                                <label class="form-check-label" for="crfree"><i class="bi bi-people me-2"></i> Comfort Room (CR)
+                                            </label>
+                                            </div>
+
+                                            <!--Aircon Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Airconfree">
+                                                <label class="form-check-label" for="Airconfree"><i class="bi bi-snow me-2"></i> Air Conditioner</label>
+                                            </div>
+
+                                            <!--Electric Fan Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="efanfree">
+                                                <label class="form-check-label" for="efanfree"><i class="bi bi-wind me-2"></i> Electric Fan</label>
+                                            </div>
+
+                                            <!--Laundry Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="LaundryAreafree">
+                                                <label class="form-check-label" for="LaundryAreafree"><i class="bi bi-basket me-2"></i> Laundry Area</label>
+                                            </div>
+
+                                            <!--Study Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="StudyAreafree" checked>
+                                                <label class="form-check-label" for="StudyAreafree"><i class="bi bi-book me-2"></i> Study Area</label>
+                                            </div>
+
+                                            <!--Refrigerator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Refrigeratorfree">
+                                                <label class="form-check-label" for="Refrigeratorfree"><i class="bi bi-snow2 me-2"></i> Refrigerator</label>
+                                            </div>
+
+                                            <!--Security Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Securefree" checked>
+                                                <label class="form-check-label" for="Securefree"><i class="bi bi-person-badge me-2"></i> Caretaker</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2nd column-->
+                                        <div class="col-6">
+
+                                            <!--Fire Extinguisher Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExtinguisherfree" checked>
+                                                <label class="form-check-label" for="fireExtinguisherfree"><i class="bi bi-fire me-2"></i> Fire Extinguisher</label>
+                                            </div>
+
+                                            <!--Fire Alarm System Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FireAlarmSystemfree" checked>
+                                                <label class="form-check-label" for="FireAlarmSystemfree"><i class="bi bi-exclamation-circle me-2"></i> Fire Alarm System</label>
+                                            </div>
+
+                                            <!--Fire Exit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExitfree">
+                                                <label class="form-check-label" for="fireExitfree"><i class="bi bi-door-open me-2"></i> Fire Exit</label>
+                                            </div>
+
+                                            <!--First Aid Kit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FirstAidKitfree">
+                                                <label class="form-check-label" for="FirstAidKitfree"><i class="bi bi-heart-pulse me-2"></i> First Aid Kit</label>
+                                            </div>
+
+                                            <!--CCTV Cameras Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cctvfree" checked>
+                                                <label class="form-check-label" for="cctvfree"><i class="bi bi-camera-video me-2"></i> CCTV Cameras</label>
+                                            </div>
+
+                                            <!--Parking Space Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="parkingSpacefree">
+                                                <label class="form-check-label" for="parkingSpacefree"><i class="bi bi-car-front me-2"></i> Parking Space</label>
+                                            </div>
+
+                                            <!--Visitor Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="VisitorAreafree" checked>
+                                                <label class="form-check-label" for="VisitorAreafree"><i class="bi bi-person-walking me-2"></i> Visitor Area</label>
+                                            </div>
+
+                                            <!--Balcony Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Balconyfree">
+                                                <label class="form-check-label" for="Balconyfree"><i class="bi bi-building me-2"></i> Balcony</label>
+                                            </div>
+
+                                            <!--Generator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Generatorfree">
+                                                <label class="form-check-label" for="Generatorfree"><i class="bi bi-lightning-charge me-2"></i> Generator</label>
+                                            </div>
+
+                                            <!--Trash Bins Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="TrashBinsfree">
+                                                <label class="form-check-label" for="TrashBinsfree"><i class="bi bi-trash me-2"></i> Trash Bins</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Paid Amenities -->
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-cash-stack me-2"></i> Paid Amenities</label>
+                                    <div class="row">
+                                        <!-- 1st column-->
+                                        <div class="col-6">
+
+                                            <!--Wifi icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="wifi1">
+                                                <label class="form-check-label" for="wifi1"><i class="bi bi-wifi me-2"></i> Wi-Fi</label>
+                                            </div>
+
+                                            <!--Water Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="water1">
+                                                <label class="form-check-label" for="water1"><i class="bi bi-droplet me-2"></i> 24/7 Water Supply</label>
+                                            </div>
+
+                                            <!--Electricity Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="electricity1">
+                                                <label class="form-check-label" for="electricity1"><i class="bi bi-lightning me-2"></i> Electricity</label>
+                                            </div>
+
+                                            <!--Comfort Room Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cr1">
+                                                <label class="form-check-label" for="cr1"><i class="bi bi-people me-2"></i> Comfort Room (CR)
+                                            </label>
+                                            </div>
+
+                                            <!--Aircon Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Aircon1">
+                                                <label class="form-check-label" for="Aircon1"><i class="bi bi-snow me-2"></i> Air Conditioner</label>
+                                            </div>
+
+                                            <!--Electric Fan Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="efan1">
+                                                <label class="form-check-label" for="efan1"><i class="bi bi-wind me-2"></i> Electric Fan</label>
+                                            </div>
+
+                                            <!--Laundry Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="LaundryArea1">
+                                                <label class="form-check-label" for="LaundryArea1"><i class="bi bi-basket me-2"></i> Laundry Area</label>
+                                            </div>
+
+                                            <!--Study Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="StudyArea1">
+                                                <label class="form-check-label" for="StudyArea1"><i class="bi bi-book me-2"></i> Study Area</label>
+                                            </div>
+
+                                            <!--Refrigerator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Refrigerator1">
+                                                <label class="form-check-label" for="Refrigerator1"><i class="bi bi-snow2 me-2"></i> Refrigerator</label>
+                                            </div>
+
+                                            <!--Security Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Secure1">
+                                                <label class="form-check-label" for="Secure1"><i class="bi bi-person-badge me-2"></i> Caretaker</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2nd column-->
+                                        <div class="col-6">
+
+                                            <!--Fire Extinguisher Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExtinguisher1">
+                                                <label class="form-check-label" for="fireExtinguisher1"><i class="bi bi-fire me-2"></i> Fire Extinguisher</label>
+                                            </div>
+
+                                            <!--Fire Alarm System Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FireAlarmSystem1">
+                                                <label class="form-check-label" for="FireAlarmSystem1"><i class="bi bi-exclamation-circle me-2"></i> Fire Alarm System</label>
+                                            </div>
+
+                                            <!--Fire Exit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExit1">
+                                                <label class="form-check-label" for="fireExit1"><i class="bi bi-door-open me-2"></i> Fire Exit</label>
+                                            </div>
+
+                                            <!--First Aid Kit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FirstAidKit1">
+                                                <label class="form-check-label" for="FirstAidKit1"><i class="bi bi-heart-pulse me-2"></i> First Aid Kit</label>
+                                            </div>
+
+                                            <!--CCTV Cameras Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cctv1">
+                                                <label class="form-check-label" for="cctv1"><i class="bi bi-camera-video me-2"></i> CCTV Cameras</label>
+                                            </div>
+
+                                            <!--Parking Space Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="parkingSpace1">
+                                                <label class="form-check-label" for="parkingSpace1"><i class="bi bi-car-front me-2"></i> Parking Space</label>
+                                            </div>
+
+                                            <!--Visitor Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="VisitorArea1">
+                                                <label class="form-check-label" for="VisitorArea1"><i class="bi bi-person-walking me-2"></i> Visitor Area</label>
+                                            </div>
+
+                                            <!--Balcony Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Balcony1">
+                                                <label class="form-check-label" for="Balcony1"><i class="bi bi-building me-2"></i> Balcony</label>
+                                            </div>
+
+                                            <!--Generator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Generator1">
+                                                <label class="form-check-label" for="Generator1"><i class="bi bi-lightning-charge me-2"></i> Generator</label>
+                                            </div>
+
+                                            <!--Trash Bins Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="TrashBins1">
+                                                <label class="form-check-label" for="TrashBins1"><i class="bi bi-trash me-2"></i> Trash Bins</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Location -->
+                                <div class="mb-3">
+                                    <label for="bhLocation" class="form-label">Location</label>
+                                    <input type="text" class="form-control" id="bhLocation" placeholder="Enter location" value="San Nicolas, Nabua, Camarines Sur">
+                                </div>
+
+                                <!-- Description -->
+                                <div class="mb-3">
+                                    <label for="bhDetails" class="form-label">Description</label>
+                                    <textarea class="form-control" id="bhDetails" rows="3" placeholder="Enter additional details">Located in the heart of Nabua, our boarding house offers a comfortable and safe place to stay for students and young professionals. Enjoy cozy rooms, a friendly community, and convenient access to nearby schools and essential services. Whether you’re here for short-term or long-term stay, Abonita-Sawchuk is your home away from home.</textarea>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Boarding House Modal -->
+            <div class="modal fade" id="addbhModal" tabindex="-1" aria-labelledby="bhModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Header -->
+                        <div class="modal-header bg-primary">
+                            <h5 class="modal-title text-white p-2 rouded-pill" id="bhModalLabel">Add Boarding House</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="modal-body">
+                            <form>
+                                <!-- Photo Upload -->
+                                <div class="mb-3 text-center">
+                                    <label for="bhPhoto" class="form-label d-block text-start mt-2">Add Photo</label>
+                                    <input class="form-control" type="file" id="bhPhoto">
+                                </div>
+
+                                <!--Insert 3 photos-->
+                                <div class="mb-3 text-center">
+                                    <label for="bhPhoto" class="form-label d-block text-start mt-2">Insert 3 Photos</label>
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                    <input class="form-control mb-2" type="file" id="bhPhoto">
+                                </div>
+
+                                <!-- Boarding House Name -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Boarding House Name</label>
+                                    <input type="text" class="form-control" id="bhName" placeholder="Enter boarding house name">
+                                </div>
+
+                                <!-- Price -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Rent Price</label>
+                                    <input type="Number" class="form-control" id="bhName" placeholder="Enter rent price">
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="bhName" placeholder="Enter Phone Number">
+                                </div>
+
+                                <!-- Google Map Location -->
+                                <div class="mb-3">
+                                    <label for="bhName" class="form-label">Google Map Location</label>
+                                    <input type="text" class="form-control" id="bhName" placeholder="Enter the link of the boarding house">
+                                </div>
+
+                                <!-- Free Amenities -->
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-check-circle-fill me-2"></i> Free Amenities</label>
+                                    <div class="row">
+                                        <!-- 1st column-->
+                                        <div class="col-6">
+
+                                            <!--Wifi icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="wifi">
+                                                <label class="form-check-label" for="wifi"><i class="bi bi-wifi me-2"></i> Wi-Fi</label>
+                                            </div>
+
+                                            <!--Water Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="water">
+                                                <label class="form-check-label" for="water"><i class="bi bi-droplet me-2"></i> 24/7 Water Supply</label>
+                                            </div>
+
+                                            <!--Electricity Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="electricity">
+                                                <label class="form-check-label" for="electricity"><i class="bi bi-lightning me-2"></i> Electricity</label>
+                                            </div>
+
+                                            <!--Comfort Room Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cr">
+                                                <label class="form-check-label" for="cr"><i class="bi bi-people me-2"></i> Comfort Room (CR)
+                                            </label>
+                                            </div>
+
+                                            <!--Aircon Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Aircon">
+                                                <label class="form-check-label" for="Aircon"><i class="bi bi-snow me-2"></i> Air Conditioner</label>
+                                            </div>
+
+                                            <!--Electric Fan Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="efan">
+                                                <label class="form-check-label" for="efan"><i class="bi bi-wind me-2"></i> Electric Fan</label>
+                                            </div>
+
+                                            <!--Laundry Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="LaundryArea">
+                                                <label class="form-check-label" for="LaundryArea"><i class="bi bi-basket me-2"></i> Laundry Area</label>
+                                            </div>
+
+                                            <!--Study Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="StudyArea">
+                                                <label class="form-check-label" for="StudyArea"><i class="bi bi-book me-2"></i> Study Area</label>
+                                            </div>
+
+                                            <!--Refrigerator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Refrigerator">
+                                                <label class="form-check-label" for="Refrigerator"><i class="bi bi-snow2 me-2"></i> Refrigerator</label>
+                                            </div>
+
+                                            <!--Security Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Secure">
+                                                <label class="form-check-label" for="Secure"><i class="bi bi-person-badge me-2"></i> Caretaker</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2nd column-->
+                                        <div class="col-6">
+
+                                            <!--Fire Extinguisher Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExtinguisher">
+                                                <label class="form-check-label" for="fireExtinguisher"><i class="bi bi-fire me-2"></i> Fire Extinguisher</label>
+                                            </div>
+
+                                            <!--Fire Alarm System Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FireAlarmSystem">
+                                                <label class="form-check-label" for="FireAlarmSystem"><i class="bi bi-exclamation-circle me-2"></i> Fire Alarm System</label>
+                                            </div>
+
+                                            <!--Fire Exit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExit">
+                                                <label class="form-check-label" for="fireExit"><i class="bi bi-door-open me-2"></i> Fire Exit</label>
+                                            </div>
+
+                                            <!--First Aid Kit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FirstAidKit">
+                                                <label class="form-check-label" for="FirstAidKit"><i class="bi bi-heart-pulse me-2"></i> First Aid Kit</label>
+                                            </div>
+
+                                            <!--CCTV Cameras Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cctv">
+                                                <label class="form-check-label" for="cctv"><i class="bi bi-camera-video me-2"></i> CCTV Cameras</label>
+                                            </div>
+
+                                            <!--Parking Space Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="parkingSpace">
+                                                <label class="form-check-label" for="parkingSpace"><i class="bi bi-car-front me-2"></i> Parking Space</label>
+                                            </div>
+
+                                            <!--Visitor Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="VisitorArea">
+                                                <label class="form-check-label" for="VisitorArea"><i class="bi bi-person-walking me-2"></i> Visitor Area</label>
+                                            </div>
+
+                                            <!--Balcony Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Balcony">
+                                                <label class="form-check-label" for="Balcony"><i class="bi bi-building me-2"></i> Balcony</label>
+                                            </div>
+
+                                            <!--Generator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Generator">
+                                                <label class="form-check-label" for="Generator"><i class="bi bi-lightning-charge me-2"></i> Generator</label>
+                                            </div>
+
+                                            <!--Trash Bins Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="TrashBins">
+                                                <label class="form-check-label" for="TrashBins"><i class="bi bi-trash me-2"></i> Trash Bins</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Paid Amenities -->
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-cash-stack me-2"></i> Paid Amenities</label>
+                                    <div class="row">
+                                        <!-- 1st column-->
+                                        <div class="col-6">
+
+                                            <!--Wifi icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="wifipaid">
+                                                <label class="form-check-label" for="wifipaid"><i class="bi bi-wifi me-2"></i> Wi-Fi</label>
+                                            </div>
+
+                                            <!--Water Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="waterpaid">
+                                                <label class="form-check-label" for="waterpaid"><i class="bi bi-droplet me-2"></i> 24/7 Water Supply</label>
+                                            </div>
+
+                                            <!--Electricity Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="electricitypaid">
+                                                <label class="form-check-label" for="electricitypaid"><i class="bi bi-lightning me-2"></i> Electricity</label>
+                                            </div>
+
+                                            <!--Comfort Room Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="crpaid">
+                                                <label class="form-check-label" for="crpaid"><i class="bi bi-people me-2"></i> Comfort Room (CR)
+                                            </label>
+                                            </div>
+
+                                            <!--Aircon Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Airconpaid">
+                                                <label class="form-check-label" for="Airconpaid"><i class="bi bi-snow me-2"></i> Air Conditioner</label>
+                                            </div>
+
+                                            <!--Electric Fan Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="efanpaid">
+                                                <label class="form-check-label" for="efanpaid"><i class="bi bi-wind me-2"></i> Electric Fan</label>
+                                            </div>
+
+                                            <!--Laundry Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="LaundryAreapaid">
+                                                <label class="form-check-label" for="LaundryAreapaid"><i class="bi bi-basket me-2"></i> Laundry Area</label>
+                                            </div>
+
+                                            <!--Study Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="StudyAreapaid">
+                                                <label class="form-check-label" for="StudyAreapaid"><i class="bi bi-book me-2"></i> Study Area</label>
+                                            </div>
+
+                                            <!--Refrigerator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Refrigeratorpaid">
+                                                <label class="form-check-label" for="Refrigeratorpaid"><i class="bi bi-snow2 me-2"></i> Refrigerator</label>
+                                            </div>
+
+                                            <!--Security Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Securepaid">
+                                                <label class="form-check-label" for="Securepaid"><i class="bi bi-person-badge me-2"></i> Caretaker</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2nd column-->
+                                        <div class="col-6">
+
+                                            <!--Fire Extinguisher Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExtinguisherpaid">
+                                                <label class="form-check-label" for="fireExtinguisherpaid"><i class="bi bi-fire me-2"></i> Fire Extinguisher</label>
+                                            </div>
+
+                                            <!--Fire Alarm System Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FireAlarmSystempaid">
+                                                <label class="form-check-label" for="FireAlarmSystempaid"><i class="bi bi-exclamation-circle me-2"></i> Fire Alarm System</label>
+                                            </div>
+
+                                            <!--Fire Exit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="fireExitpaid">
+                                                <label class="form-check-label" for="fireExitpaid"><i class="bi bi-door-open me-2"></i> Fire Exit</label>
+                                            </div>
+
+                                            <!--First Aid Kit Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FirstAidKitpaid">
+                                                <label class="form-check-label" for="FirstAidKitpaid"><i class="bi bi-heart-pulse me-2"></i> First Aid Kit</label>
+                                            </div>
+
+                                            <!--CCTV Cameras Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cctvpaid">
+                                                <label class="form-check-label" for="cctvpaid"><i class="bi bi-camera-video me-2"></i> CCTV Cameras</label>
+                                            </div>
+
+                                            <!--Parking Space Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="parkingSpacepaid">
+                                                <label class="form-check-label" for="parkingSpacepaid"><i class="bi bi-car-front me-2"></i> Parking Space</label>
+                                            </div>
+
+                                            <!--Visitor Area Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="VisitorAreapaid">
+                                                <label class="form-check-label" for="VisitorAreapaid"><i class="bi bi-person-walking me-2"></i> Visitor Area</label>
+                                            </div>
+
+                                            <!--Balcony Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Balconypaid">
+                                                <label class="form-check-label" for="Balconypaid"><i class="bi bi-building me-2"></i> Balcony</label>
+                                            </div>
+
+                                            <!--Generator Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Generatorpaid">
+                                                <label class="form-check-label" for="Generatorpaid"><i class="bi bi-lightning-charge me-2"></i> Generator</label>
+                                            </div>
+
+                                            <!--Trash Bins Icon-->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="TrashBinspaid">
+                                                <label class="form-check-label" for="TrashBinspaid"><i class="bi bi-trash me-2"></i> Trash Bins</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Location -->
+                                <div class="mb-3">
+                                    <label for="bhLocation" class="form-label">Location</label>
+                                    <input type="text" class="form-control" id="bhLocation" placeholder="Enter location">
+                                </div>
+
+                                <!-- Details -->
+                                <div class="mb-3">
+                                    <label for="bhDetails" class="form-label">Details</label>
+                                    <textarea class="form-control" id="bhDetails" rows="3" placeholder="Enter additional details"></textarea>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container text-light text-center">
+            <p class="h5 mb-2">CSPC's Boarding Selection</p>
+            <small class="text-white-50">
+            &copy; 2025-2026 CSPC's Boarding Selection. All rights reserved.
+          </small>
+        </div>
+    </footer>
+
+
+
+
+    <!-- Bootstrap JS (optional if modal isn't used) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

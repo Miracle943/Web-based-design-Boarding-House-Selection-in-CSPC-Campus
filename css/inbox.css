@@ -1,0 +1,65 @@
+body {
+    background: #f5f6fa;
+    font-family: "Inter", sans-serif;
+}
+
+.check-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.check-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e6e6e6;
+    transition: 0.2s ease;
+}
+
+.check-wrapper:hover {
+    border-color: #b8b8b8;
+    background: #fafafa;
+}
+
+input[type="checkbox"] {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 0.9rem;
+    border-radius: 4px;
+    accent-color: #0d6efd;
+}
+
+label {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.confirm-btn {
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.7rem 2.5rem;
+}
+
+
+/* Sticky Footer Styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    /* pushes footer down */
+}
+
+footer {
+    flex-shrink: 0;
+}

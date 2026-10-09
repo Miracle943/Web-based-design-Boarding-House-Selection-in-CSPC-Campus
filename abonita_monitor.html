@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Abonita Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Website Icon-->
+    <link rel="icon" type="image/png" href="img/logo/CSPC_logo.png">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/ownerhome.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="img/Legal Documents/Owner profile/sylvia.jpeg" width="30" height="30" alt="CSPC" class="me-3 rounded-circle"> Welcome, Owner
+                </a>
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Nav links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="abonita_monitor.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="abonita_room.html">Room</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="abonita_edit.html">Legal Documents</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="abonita_inbox.html">Notification</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-primary rounded-pill px-4 py-1" data-bs-toggle="modal" data-bs-target="#returnmodal">Return</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Warn the user if he/she is going to return -->
+        <section class="modal fade" tabindex="-1" id="returnmodal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Warning:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning text-center" role="alert">
+                            Are you sure you want to return to the owners bh page?
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="addbh.html" class="btn btn-primary">Yes</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+
+        <!-- Warn the user if he/she is going to log out -->
+        <section class="modal fade" tabindex="-1" id="logoutModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Warning:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning text-center" role="alert">
+                            Are you sure you want to log out?
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="LogIn.html" class="btn btn-primary">Yes</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Abonita-Sawchuk Boarding House Monitoring</h2>
+            <p class="text-muted">Student Booking Monitoring</p>
+        </div>
+
+        <div class="profile-card mx-auto page-break" style="max-width: 1300px;">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                <h4 class="mb-0"><i class="bi bi-clipboard-data me-2"></i>Bookings Monitor</h4>
+                <div class="d-flex gap-2">
+                    <div class="input-group" style="max-width: 450px;">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input id="bookingSearch" type="text" class="form-control" placeholder="Search by name, room, or address">
+                    </div>
+                    <button id="downloadPDF" class="btn btn-danger">
+                        <i class="bi bi-file-earmark-pdf-fill me-1"></i>Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table id="bookingsTable" class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Reference No.</th>
+                            <th>Student Name</th>
+                            <th>Age</th>
+                            <th>Room</th>
+                            <th>Check-In Date</th>
+                            <th>Check-Out Date</th>
+                            <th>Address</th>
+                            <th>Contact Number</th>
+                            <th>Emergency Contact</th>
+                            <th>Guardian Name</th>
+                            <th>Months</th>
+                            <th>Amount</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>REF2025-001</td>
+                            <td>Anna Mae Santos</td>
+                            <td>21</td>
+                            <td class="text-center">Room 1 <span class="badge text-dark rounded-pill" style="background-color:#f8d7da;">Girls</span></td>
+                            <td>August 15, 2025</td>
+                            <td>September 15, 2025</td>
+                            <td>San Nicolas, Nabua, Camarines Sur</td>
+                            <td>0917 234 5678</td>
+                            <td>0927 654 3210</td>
+                            <td>Marites Santos</td>
+                            <td class="text-center">1</td>
+                            <td>₱2,000</td>
+                            <td><button class="btn btn-sm btn-success mark-paid">Mark as Paid</button></td>
+                        </tr>
+                        <tr>
+                            <td>REF2025-002</td>
+                            <td>Clarisse Dela Cruz</td>
+                            <td>22</td>
+                            <td class="text-center">Room 1 <span class="badge text-dark rounded-pill" style="background-color:#f8d7da;">Girls</span></td>
+                            <td>August 16, 2025</td>
+                            <td>September 16, 2025</td>
+                            <td>Balatas, Naga City, Camarines Sur</td>
+                            <td>0918 765 4321</td>
+                            <td>0929 112 3344</td>
+                            <td>Mario Dela Cruz</td>
+                            <td class="text-center">1</td>
+                            <td>₱2,000</td>
+                            <td><button class="btn btn-sm btn-success mark-paid">Mark as Paid</button></td>
+                        </tr>
+                        <tr>
+                            <td>REF2025-003</td>
+                            <td>Bea C. Ramirez</td>
+                            <td>20</td>
+                            <td class="text-center">Room 1 <span class="badge text-dark rounded-pill" style="background-color:#f8d7da;">Girls</span></td>
+                            <td>August 18, 2025</td>
+                            <td>September 18, 2025</td>
+                            <td>Iriga City, Camarines Sur</td>
+                            <td>0920 111 2233</td>
+                            <td>0947 221 8765</td>
+                            <td>Cynthia Ramirez</td>
+                            <td class="text-center">1</td>
+                            <td>₱2,000</td>
+                            <td><button class="btn btn-sm btn-success mark-paid">Mark as Paid</button></td>
+                        </tr>
+                        <tr>
+                            <td>REF2025-004</td>
+                            <td>Katrina Dela Torre</td>
+                            <td>22</td>
+                            <td class="text-center">Room 1 <span class="badge text-dark rounded-pill" style="background-color:#f8d7da;">Girls</span></td>
+                            <td>August 20, 2025</td>
+                            <td> September 20, 2025</td>
+                            <td>Pili, Camarines Sur</td>
+                            <td>0935 555 7788</td>
+                            <td>0912 334 5566</td>
+                            <td>Jose Dela Torre</td>
+                            <td class="text-center">1</td>
+                            <td>₱2,000</td>
+                            <td><button class="btn btn-sm btn-success mark-paid">Mark as Paid</button></td>
+                        </tr>
+                        <tr>
+                            <td>REF2025-005</td>
+                            <td>Chloe Anne F. Cruz</td>
+                            <td>19</td>
+                            <td class="text-center">Room 2 <span class="badge text-dark rounded-pill" style="background-color:#f8d7da;">Girls</span></td>
+                            <td>August 15, 2025</td>
+                            <td>September 15, 2025</td>
+                            <td>Baao, Camarines Sur</td>
+                            <td>0917 854 6291</td>
+                            <td>0910 556 7789</td>
+                            <td>Feliza Cruz</td>
+                            <td class="text-center">1</td>
+                            <td>₱2,000</td>
+                            <td><button class="btn btn-sm btn-success mark-paid">Mark as Paid</button></td>
+                        </tr>
+                        <tr>
+                            <td>REF2025-007</td>
+                            <td>Rafaela Villanueva</td>
+                            <td>21</td>
+                            <td class="text-center">Room 4 <span class="badge text-dark rounded-pill" style="background-color:#f8d7da;">Girls</span></td>
+                            <td>August 16, 2025</td>
+                            <td>September 16, 2025</td>
+                            <td>Brgy. San Roque, Calabanga, Camarines Sur</td>
+                            <td>0945 782 3164</td>
+                            <td>0922 445 7788</td>
+                            <td>Rebecca Villanueva</td>
+                            <td class="text-center">1</td>
+                            <td>₱2,000</td>
+                            <td><button class="btn btn-sm btn-success mark-paid">Mark as Paid</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-muted small mt-3 mb-0">
+                <i class="bi bi-info-circle me-1"></i> Tip: Type a name, a room, or a place in the search box to filter the list.
+            </p>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+        <!-- Link to external JavaScript file -->
+        <script src="javascript/ownerhome.js"></script>
+
+    </main>
+
+    <footer class="bg-dark py-4 mt-5">
+        <div class="container text-light text-center">
+            <p class="h5 mb-2">CSPC's Boarding Selection</p>
+            <small class="text-white-50">&copy; 2025-2026 CSPC's Boarding Selection. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

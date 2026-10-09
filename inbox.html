@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Website Icon-->
+    <link rel="icon" type="image/png" href="img/logo/CSPC_logo.png">
+    <link rel="stylesheet" href="css/inbox.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Camarines_Sur_Polytechnic_Colleges_Logo.png" width="30" height="30" alt="CSPC" class="me-3 rounded-circle"> Welcome, Admin
+                </a>
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Nav links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="SASO.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="inbox.html">New Application</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="registered.html">Registered</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="archive.html">Archive</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a href="LogIn.html" class="btn btn-primary rounded-pill px-4 py-1" data-bs-toggle="modal" data-bs-target="#logoutModal">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <!-- Warn the user if he/she is going to log out -->
+        <section class="modal fade" tabindex="-1" id="logoutModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Warning:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning text-center" role="alert">
+                            Are you sure you want to log out?
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="LogIn.html" class="btn btn-primary">Yes</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toast function to notify the user -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000" data-bs-autohide="false">
+                <div class="toast-header">
+                    <span class="bg-primary rounded me-2" style="width: 10px; height: 10px; display: inline-block;"></span>
+                    <strong class="me-auto">Notification Sent 📩</strong>
+                    <small>Just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    ✅ Notification will be sent to the owner.
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Accept boarding house Modal -->
+        <div class="modal fade" id="acceptEmailModal" tabindex="-1" aria-labelledby="rejectEmailModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="rejectEmailModalLabel">
+                            <i class="bi bi-check2-square me-2"></i> Confirmation Message
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body text-center">
+                        <p class="mb-2">Are you sure you want to register the boarding house?</p>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="liveToastBtn" data-bs-dismiss="modal">
+                            <i class="bi bi-check-lg mb-2"></i> Confirm
+          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create criteria modal -->
+        <div class="modal fade" id="addCriteriaModal" tabindex="-1" aria-labelledby="addCriteriaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <!-- 👈 Centered vertically -->
+                <div class="modal-content">
+
+                    <div class="modal-header bg-success">
+                        <h5 class="modal-title text-light" id="addCriteriaLabel">Add Criteria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="criteriaForm">
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label for="criteriaName" class="form-label">Name of the Criteria</label>
+                                <input type="text" class="form-control" id="criteriaName" placeholder="Enter criteria" required>
+                            </div>
+
+                            <!-- Dropdown -->
+                            <div class="mb-3">
+                                <label for="legalDocument" class="form-label">Select Legal Document (Optional)</label>
+                                <select class="form-select" id="legalDocument" required>
+                                    <option value="" disabled selected>Select document</option>
+                                    <option>Business Permit Application</option>
+                                    <option>Community Tax Certificate</option>
+                                    <option>DTI Registration Certificate</option>
+                                    <option>Barangay Business Clearance</option>
+                                    <option>Certificate of Building Inspection</option>
+                                    <option>Zoning Certificate/Locational Clearance</option>
+                                    <option>Sanitary Permit/Health Clearance</option>
+                                    <option>Valid Fire Safety Inspection Certificate</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm" form="criteriaForm" data-bs-dismiss="modal">Save</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Update criteria modal -->
+        <div class="modal fade" id="updateCriteriaModal" tabindex="-1" aria-labelledby="addCriteriaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <!-- 👈 Centered vertically -->
+                <div class="modal-content">
+
+                    <div class="modal-header bg-warning text-dark">
+                        <h5 class="modal-title text-light" id="addCriteriaLabel">Update Criteria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="criteriaForm">
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label for="criteriaName" class="form-label">Update name</label>
+                                <input type="text" class="form-control" id="criteriaName" placeholder="Enter name" required>
+                            </div>
+
+                            <!-- Dropdown -->
+                            <div class="mb-3">
+                                <label for="legalDocument" class="form-label">Select the criteria that you want to edit</label>
+                                <select class="form-select" id="legalDocument" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option>Business Permit Application</option>
+                                    <option>Community Tax Certificate</option>
+                                    <option>DTI Registration Certificate</option>
+                                    <option>Barangay Business Clearance</option>
+                                    <option>Certificate of Building Inspection</option>
+                                    <option>Zoning Certificate/Locational Clearance</option>
+                                    <option>Sanitary Permit/Health Clearance</option>
+                                    <option>Valid Fire Safety Inspection Certificate</option>
+                                    <option>On the list of accredited boarding houses from LGU Nabua</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm" form="criteriaForm" data-bs-dismiss="modal">Save</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete criteria modal -->
+        <div class="modal fade" id="deleteCriteriaModal" tabindex="-1" aria-labelledby="addCriteriaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <!-- 👈 Centered vertically -->
+                <div class="modal-content">
+
+                    <div class="modal-header bg-danger">
+                        <h5 class="modal-title text-light" id="addCriteriaLabel">Delete Criteria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="criteriaForm">
+
+                            <!-- Dropdown -->
+                            <div class="mb-3">
+                                <label for="legalDocument" class="form-label">Select Criteria to be deleted</label>
+                                <select class="form-select" id="legalDocument" required>
+                                    <option value="" disabled selected>Select Criteria to be deleted</option>
+                                    <option>Business Permit Application</option>
+                                    <option>Community Tax Certificate</option>
+                                    <option>DTI Registration Certificate</option>
+                                    <option>Barangay Business Clearance</option>
+                                    <option>Certificate of Building Inspection</option>
+                                    <option>Zoning Certificate/Locational Clearance</option>
+                                    <option>Sanitary Permit/Health Clearance</option>
+                                    <option>Valid Fire Safety Inspection Certificate</option>
+                                    <option>On the list of accredited boarding houses from LGU Nabua</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger btn-sm" form="criteriaForm" data-bs-dismiss="modal">Confirm</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <h2 class="mb-4 text-center">List of New Boarding House Application</h2>
+
+        <!-- Hypothetical Inbox Table -->
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered align-middle shadow-sm">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>#</th>
+                        <th scope="col">Owner Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Boarding House</th>
+                        <th scope="col">Date</th>
+                        <th scope="col" class="text-center">Documents</th>
+                        <th scope="col" class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <!-- Sylvia G. Baladia Row-->
+                    <tr class="text-center">
+                        <td>1</td>
+                        <td>Sylvia G. Baladia</td>
+                        <td>sylvia@email.com</td>
+                        <td>Sylvia Boarding House Rental</td>
+                        <td>Sep 18, 2025</td>
+                        <td class="text-center">
+                            <button class="btn btn-outline-primary btn-sm px-3" data-bs-toggle="modal" data-bs-target="#docsModal1">
+        <i class="bi bi-folder2-open me-1"></i> View Docs
+      </button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-success btn-sm px-3" data-bs-toggle="collapse" data-bs-target="#checklist1" aria-expanded="false" aria-controls="checklist1">
+        <i class="bi bi-list-check me-1"></i> Requirement Checklist
+      </button>
+                        </td>
+                    </tr>
+
+                    <!-- Slyvia Checklist -->
+                    <tr>
+                        <td colspan="7" class="p-0 border-0">
+                            <div id="checklist1" class="collapse">
+                                <div class="card card-body bg-light border-start border-4 shadow-sm mt-2 mb-3">
+
+                                    <!-- Title -->
+                                    <h5 class="fw-bold text-primary mb-4 text-center">
+                                        <i class="bi bi-card-checklist me-2"></i> Requirement Checklist
+                                    </h5>
+
+                                    <!-- Checklist Table -->
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-bordered align-middle">
+                                            <thead class="table-secondary">
+                                                <tr>
+                                                    <th scope="col" style="width: 10%">#</th>
+                                                    <th scope="col">Checklist Item</th>
+                                                    <th>File Location</th>
+                                                    <th scope="col" class="text-center" style="width: 15%">Check if Valid</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Business Permit Application</td>
+                                                    <td>
+                                                        <a href="img/Legal Documents/Business Permit Application Form/1.jpg" target="_blank">View File</a>
+                                                        <span>,</span>
+                                                        <a href="img/Legal Documents/Business Permit Application Form/2.jpg" target="_blank">View File</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1a">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Community Tax Certificate</td>
+                                                    <td>
+                                                        <a href="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" target="_blank">View File</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>DTI Registration Certificate</td>
+                                                    <td>
+                                                        <a href="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" target="_blank">View File</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Barangay Business Clearance</td>
+                                                    <td>
+                                                        <a href="img/Legal Documents/Barangay Business  Clearance/1.jpg" target="_blank">View File</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Certificate of Building Inspection</td>
+                                                    <td>
+                                                        <a href="img/Legal Documents/Certificate of Building Inspection/1.jpg" target="_blank">View File</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Zoning Certificate/Locational Clearance</td>
+                                                    <td><a href="img/Legal Documents/Zoning Certificate/1.jpg" target="_blank">View File</a></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1c">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>Sanitary Permit/Health Clearance</td>
+                                                    <td><a href="img/Legal Documents/Sanitary Permit/1.jpg" target="_blank">View File</a></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1c">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>Valid Fire Safety Inspection Certificate</td>
+                                                    <td><a href="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" target="_blank">View File</a></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1d">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>On the list of accredited boarding houses from LGU Nabua</td>
+                                                    <td></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1d">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="d-flex gap-2 justify-content-end">
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#acceptEmailModal">
+              <i class="bi bi-check-circle me-1"></i> Confirm
+            </button>
+                                        <!-- Button -->
+                                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addCriteriaModal">
+    <i class="bi bi-plus-circle me-1"></i> Add Criteria
+  </button>
+
+                                        <button class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#updateCriteriaModal">
+    <i class="bi bi-pencil-square"></i> Update Criteria
+  </button>
+                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCriteriaModal">
+    <i class="bi bi-trash me-1"></i> Delete Criteria
+</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Juan Dela Cruz Row-->
+                    <tr class="text-center">
+                        <td>2</td>
+                        <td>Juan Dela Cruz</td>
+                        <td>juan.delacruz@email.com</td>
+                        <td>JD’s Boarding House Rental</td>
+                        <td>Aug 30, 2025</td>
+                        <td class="text-center">
+                            <button class="btn btn-outline-primary btn-sm px-3" data-bs-toggle="modal" data-bs-target="#docsModal2">
+                        <i class="bi bi-folder2-open me-1"></i> View Docs
+                    </button>
+                        </td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-2">
+                                <button class="btn btn-success btn-sm px-3" data-bs-toggle="collapse" data-bs-target="#checklist2" aria-expanded="false" aria-controls="checklist1">
+                                    <i class="bi bi-list-check me-1"></i> Requirement Checklist
+                                  </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Juan dela cruz Checklist -->
+                    <tr>
+                        <td colspan="7" class="p-0 border-0">
+                            <div id="checklist2" class="collapse">
+                                <div class="card card-body bg-light border-start border-4 shadow-sm mt-2 mb-3">
+
+                                    <!-- Title -->
+                                    <h5 class="fw-bold text-primary mb-4 text-center">
+                                        <i class="bi bi-card-checklist me-2"></i> Requirement Checklist
+                                    </h5>
+
+                                    <!-- Checklist Table -->
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-bordered align-middle">
+                                            <thead class="table-secondary">
+                                                <tr>
+                                                    <th scope="col" style="width: 10%">#</th>
+                                                    <th scope="col">Checklist Item</th>
+                                                    <th>File Location</th>
+                                                    <th scope="col" class="text-center" style="width: 15%">Check if Valid</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Business Permit Application</td>
+                                                    <td>
+                                                        <a href="img/Legal Documents/Business Permit Application Form/1.jpg" target="_blank">View File</a>
+                                                        <span>,</span>
+                                                        <a href="img/Legal Documents/Business Permit Application Form/2.jpg" target="_blank">View File</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1a">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Community Tax Certificate</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>DTI Registration Certificate</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Barangay Business Clearance</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Certificate of Building Inspection</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Zoning Certificate/Locational Clearance</td>
+                                                    <td><span>Empty</span></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1c">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>Sanitary Permit/Health Clearance</td>
+                                                    <td><span>Empty</span></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1c">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>Valid Fire Safety Inspection Certificate</td>
+                                                    <td><span>Empty</span></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1d">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>On the list of accredited boarding houses from LGU Nabua</td>
+                                                    <td></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1d">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="d-flex gap-2 justify-content-end">
+                                        <button class="btn btn-primary btn-sm" id="liveToastBtn" data-bs-toggle="modal" data-bs-target="#acceptEmailModal">
+              <i class="bi bi-check-circle me-1"></i> Confirm
+            </button>
+                                        <!-- Button -->
+                                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addCriteriaModal">
+    <i class="bi bi-plus-circle me-1"></i> Add Criteria
+  </button>
+
+                                        <button class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#updateCriteriaModal">
+<i class="bi bi-pencil-square"></i> Update Criteria
+  </button>
+
+
+
+                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCriteriaModal">
+                                            <i class="bi bi-trash me-1"></i> Delete Criteria
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Ana Geneva Row-->
+                    <tr class="text-center">
+                        <td>3</td>
+                        <td>Ana Geneva</td>
+                        <td>geneva@email.com</td>
+                        <td>Genevas’s Boarding House</td>
+                        <td>Aug 29, 2025</td>
+                        <td class="text-center">
+                            <button class="btn btn-outline-primary btn-sm px-3" data-bs-toggle="modal" data-bs-target="#docsModal3">
+                        <i class="bi bi-folder2-open me-1"></i> View Docs
+                    </button>
+                        </td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-2">
+                                <button class="btn btn-success btn-sm px-3" data-bs-toggle="collapse" data-bs-target="#checklist3" aria-expanded="false" aria-controls="checklist1">
+                                    <i class="bi bi-list-check me-1"></i> Requirement Checklist
+                                  </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!--Ana's checklist-->
+                    <tr>
+                        <td colspan="7" class="p-0 border-0">
+                            <div id="checklist3" class="collapse">
+                                <div class="card card-body bg-light border-start border-4 shadow-sm mt-2 mb-3">
+
+                                    <!-- Title -->
+                                    <h5 class="fw-bold text-primary mb-4 text-center">
+                                        <i class="bi bi-card-checklist me-2"></i> Requirement Checklist
+                                    </h5>
+
+                                    <!-- Checklist Table -->
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-bordered align-middle">
+                                            <thead class="table-secondary">
+                                                <tr>
+                                                    <th scope="col" style="width: 10%">#</th>
+                                                    <th scope="col">Checklist Item</th>
+                                                    <th>File Location</th>
+                                                    <th scope="col" class="text-center" style="width: 15%">Check if Valid</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Business Permit Application</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1a">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Community Tax Certificate</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>DTI Registration Certificate</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Barangay Business Clearance</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Certificate of Building Inspection</td>
+                                                    <td>
+                                                        <span>Empty</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1b">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Zoning Certificate/Locational Clearance</td>
+                                                    <td><span>Empty</span></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1c">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>Sanitary Permit/Health Clearance</td>
+                                                    <td><span>Empty</span></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1c">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>Valid Fire Safety Inspection Certificate</td>
+                                                    <td><span>Empty</span></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1d">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>On the list of accredited boarding houses from LGU Nabua</td>
+                                                    <td></td>
+                                                    <td class="text-center">
+                                                        <input class="form-check-input border border-2 border-dark rounded m-0" type="checkbox" id="item1d">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="d-flex gap-2 justify-content-end">
+                                        <button class="btn btn-primary btn-sm" id="liveToastBtn" data-bs-toggle="modal" data-bs-target="#acceptEmailModal">
+              <i class="bi bi-check-circle me-1"></i> Confirm
+            </button>
+                                        <!-- Button -->
+                                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#addCriteriaModal">
+    <i class="bi bi-plus-circle me-1"></i> Add Criteria
+  </button>
+
+                                        <button class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#updateCriteriaModal">
+    <i class="bi bi-pencil-square"></i> Update Criteria
+  </button>
+
+                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCriteriaModal">
+                                            <i class="bi bi-trash me-1"></i> Delete Criteria
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slyvia G. Baladia Docs Modal -->
+        <div class="modal fade" id="docsModal1" tabindex="-1" aria-labelledby="docsModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title fw-bold" id="docsModal1Label">
+                            <i class="bi bi-folder2-open me-2 text-primary text-white"></i> Slyvia G. Baladia - Legal Documents
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <!--Business Permit Application Form-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- No.1 -->
+                                    <img src="img/Legal Documents/Business Permit Application Form/1.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Business Permit Application Form/1.jpg" target="_blank">1.jpg</a></small> Business Permit Application Form (Page 1)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- No.2 -->
+                                    <img src="img/Legal Documents/Business Permit Application Form/2.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Business Permit Application Form/2.jpg" target="_blank">2.jpg</a></small> Business Permit Application Form (Page 2)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Cedula-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" class="card-img-top rounded-top" alt="Community Tax Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" target="_blank">1.jpg</a></small>Community Tax Certificate (Cedula)</div>
+                                </div>
+                            </div>
+
+                            <!--DTI Registration Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" class="card-img-top rounded-top" alt="DTI Registration">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" target="_blank">1.jpg</a></small> DTI Registration Certificate</div>
+                                </div>
+                            </div>
+
+                            <!--Barangay Business Clearance-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Barangay Business  Clearance/1.jpg" class="card-img-top rounded-top" alt="Barangay Clearance">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Barangay Business  Clearance/1.jpg" target="_blank">1.jpg</a></small>Barangay Business Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Certificate of Building Inspection-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Certificate of Building Inspection/1.jpg" class="card-img-top rounded-top" alt="Building Inspection">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Certificate of Building Inspection/1.jpg" target="_blank">1.jpg</a></small>Certificate of Building Inspection</div>
+                                </div>
+                            </div>
+
+                            <!--Zoning Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Zoning Certificate/1.jpg" class="card-img-top rounded-top" alt="Zoning Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Zoning Certificate/1.jpg" target="_blank">1.jpg</a></small> Zoning Certificate / Locational Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Sanitary Permit / Health Clearance-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Sanitary Permit/1.jpg" class="card-img-top rounded-top" alt="Health Clearance">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Sanitary Permit/1.jpg" target="_blank">1.jpg</a></small>Sanitary Permit / Health Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Valid Fire Safety Inspection Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" class="card-img-top rounded-top" alt="Fire Safety Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" target="_blank">1.jpg</a></small>Valid Fire Safety Inspection Certificate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">
+            <i class="bi bi-x-circle me-1"></i> Close
+          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Juan Dela Cruz Docs Modal -->
+        <div class="modal fade" id="docsModal2" tabindex="-1" aria-labelledby="docsModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title fw-bold" id="docsModal2Label">
+                            <i class="bi bi-folder2-open me-2 text-white"></i> Juan Dela Cruz - Legal Documents
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <!--Business Permit Application Form Page 1-->
+                            <div class="col-12">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Business Permit Application Form/1.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 1">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">
+                                            Link of the file: 
+                                            <a href="img/Legal Documents/Business Permit Application Form/1.jpg" target="_blank">1.jpg</a>
+                                        </small> Business Permit Application Form (Page 1)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Business Permit Application Form Page 2-->
+                            <div class="col-12">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Business Permit Application Form/2.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        Business Permit Application Form (Page 2)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Missing files indicator -->
+                        <p class="mt-3 text-center text-danger fw-bold">
+                            ⚠ Some required files are still missing.
+                        </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ana Baylon Docs Modal -->
+        <div class="modal fade" id="docsModal3" tabindex="-1" aria-labelledby="docsModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title fw-bold text-white" id="docsModal3Label">
+                            <i class="bi bi-folder2-open me-2 text-primary"></i> Ana Baylon - Legal Documents
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger fw-bold">⚠ file (empty)</p>
+
+                        <!-- Repeat same 8 documents (change src paths if different) -->
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container text-light text-center">
+            <p class="h5 mb-2">CSPC's Boarding Selection</p>
+            <small class="text-white-50">
+            &copy; 2025-2026 CSPC's Boarding Selection. All rights reserved.
+          </small>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="javascript/inbox.js"></script>
+</body>
+
+</html>

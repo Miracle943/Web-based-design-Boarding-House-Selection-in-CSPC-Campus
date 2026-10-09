@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Room</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Website Icon-->
+    <link rel="icon" type="image/png" href="img/logo/CSPC_logo.png">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="img/Legal Documents/Owner profile/sylvia.jpeg" width="30" height="30" alt="CSPC" class="me-3 rounded-circle"> Welcome, Owner
+                </a>
+
+                <!-- Toggler for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+                <!-- Nav links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="ownerhome.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="ownerprofile.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="room.html">Room</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="addbh.html">BH</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a href="LogIn.html" class="btn btn-primary rounded-pill px-4 py-1" data-bs-toggle="modal" data-bs-target="#logoutModal">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Warn the user if he/she is going to log out -->
+        <section class="modal fade" tabindex="-1" id="logoutModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Warning:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning text-center" role="alert">
+                            Are you sure you want to log out?
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="LogIn.html" class="btn btn-primary">Yes</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+
+        <h3 class="text-center mb-5 text-primary fw-bold">
+            <i class="bi bi-building me-2"></i>Room Management
+        </h3>
+
+        <!--Female Rooms-->
+        <div class="container-fluid mt-4">
+            <h4 class="mb-3 text-center fw-semibold">Female's Rooms</h4>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="text-center">Room Number</th>
+                            <th class="text-center">Details</th>
+                            <th class="text-center">Capacity</th>
+                            <th class="text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Room 1 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 1</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room1Details" aria-expanded="false" aria-controls="room1Details">
+                                View Details
+                              </button>
+                            </td>
+                            <td class="text-center">
+                                4/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom1" id="girlsRoom1Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3" for="girlsRoom1Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom1" id="girlsRoom1Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom1Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="bg-light p-0">
+                                <div class="collapse fade" id="room1Details">
+                                    <h4 class="text-center fw-semibold mt-3">Room 1</h4>
+
+                                    <div class="p-3">
+                                        <!-- Inner details table -->
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered align-middle text-center mb-0">
+                                                <thead class="table-primary">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Reference No.</th>
+                                                        <th>Student Name</th>
+                                                        <th>Age</th>
+                                                        <th>Check-in Date</th>
+                                                        <th>Check-Out Date</th>
+                                                        <th>Address</th>
+                                                        <th>Contact Number</th>
+                                                        <th>Emergency Contact</th>
+                                                        <th>Guardian Name</th>
+                                                        <th>Amount</th>
+                                                        <th>Months</th>
+                                                        <th>Payment</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>REF2025-004</td>
+                                                        <td>Katrina Dela Torre</td>
+                                                        <td>19</td>
+                                                        <td>2025-08-20</td>
+                                                        <td>2025-09-20</td>
+                                                        <td>Pili, Camarines Sur</td>
+                                                        <td>0935 555 7788</td>
+                                                        <td>0912 334 5566</td>
+                                                        <td>Jose Dela Torre</td>
+                                                        <td>1</td>
+                                                        <td>2000</td>
+                                                        <td><span class="badge bg-danger">Not Paid</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>REF2025-005</td>
+                                                            <td>Angela Santos</td>
+                                                            <td>20</td>
+                                                            <td>2025-08-25</td>
+                                                            <td>2025-09-25</td>
+                                                            <td>Naga City, Camarines Sur</td>
+                                                            <td>0917 234 8899</td>
+                                                            <td>0920 456 3321</td>
+                                                            <td>Ramon Santos</td>
+                                                            <td>1</td>
+                                                            <td>2000</td>
+                                                            <td><span class="badge bg-danger">Not Paid</span></td>
+                                                        </tr>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>REF2025-006</td>
+                                                        <td>Bea Lagrimas</td>
+                                                        <td>18</td>
+                                                        <td>2025-08-22</td>
+                                                        <td>2025-09-22</td>
+                                                        <td>Nabua, Camarines Sur</td>
+                                                        <td>0936 778 4421</td>
+                                                        <td>0918 665 7782</td>
+                                                        <td>Luz Lagrimas</td>
+                                                        <td>1</td>
+                                                        <td>2000</td>
+                                                        <td><span class="badge bg-danger">Not Paid</span></td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>REF2025-007</td>
+                                                        <td>Clarisse Mendoza</td>
+                                                        <td>21</td>
+                                                        <td>2025-08-28</td>
+                                                        <td>2025-09-28</td>
+                                                        <td>Iriga City, Camarines Sur</td>
+                                                        <td>0950 991 2233</td>
+                                                        <td>0917 223 9988</td>
+                                                        <td>Elena Mendoza</td>
+                                                        <td>1</td>
+                                                        <td>2000</td>
+                                                        <td><span class="badge bg-danger">Not Paid</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Room 2 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 2</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room2Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom2" id="girlsRoom2Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom2Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom2" id="girlsRoom2Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom2Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room2Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 2 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Ana Cruz</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 12</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0923-456-7890</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Pedro Cruz</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom2" id="girlsRoom2Available" value="Available">
+                                        <label class="btn btn-outline-success" for="girlsRoom2Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom2" id="girlsRoom2Occupied" value="Occupied" checked>
+                                        <label class="btn btn-outline-danger" for="girlsRoom2Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Room 3 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 3</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room3Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom3" id="girlsRoom3Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom3Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom3" id="girlsRoom3Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom3Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room3Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 3 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Isabel Reyes</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 10</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0934-567-8901</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Carmen Reyes</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom3" id="girlsRoom3Available" value="Available" checked>
+                                        <label class="btn btn-outline-success me-3" for="girlsRoom3Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom3" id="girlsRoom3Occupied" value="Occupied">
+                                        <label class="btn btn-outline-danger" for="girlsRoom3Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Room 4 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 4</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room4Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom4" id="girlsRoom4Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom4Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom4" id="girlsRoom4Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom4Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room4Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 4 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Sofia Martinez</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 11</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0945-678-9012</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Luis Martinez</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom4" id="girlsRoom4Available" value="Available" checked>
+                                        <label class="btn btn-outline-success me-3" for="girlsRoom4Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom4" id="girlsRoom4Occupied" value="Occupied">
+                                        <label class="btn btn-outline-danger" for="girlsRoom4Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Room 5 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 5</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room5Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom5" id="girlsRoom5Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom5Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom5" id="girlsRoom5Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom5Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room5Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 5 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Gabriela Torres</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 12</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0956-789-0123</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Elena Torres</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom5" id="girlsRoom5Available" value="Available" checked>
+                                        <label class="btn btn-outline-success me-3" for="girlsRoom5Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom5" id="girlsRoom5Occupied" value="Occupied">
+                                        <label class="btn btn-outline-danger" for="girlsRoom5Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Room 6 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 6</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room6Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom6" id="girlsRoom6Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom6Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom6" id="girlsRoom6Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom6Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room6Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 6 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Lucia Fernandez</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 10</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0967-890-1234</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Miguel Fernandez</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom6" id="girlsRoom6Available" value="Available" checked>
+                                        <label class="btn btn-outline-success me-3" for="girlsRoom6Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom6" id="girlsRoom6Occupied" value="Occupied">
+                                        <label class="btn btn-outline-danger" for="girlsRoom6Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Room 7 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 7</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room7Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom7" id="girlsRoom7Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom7Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom7" id="girlsRoom7Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom7Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room7Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 7 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Patricia Gonzales</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 11</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0978-901-2345</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Jose Gonzales</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom7" id="girlsRoom7Available" value="Available" checked>
+                                        <label class="btn btn-outline-success me-3" for="girlsRoom7Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom7" id="girlsRoom7Occupied" value="Occupied">
+                                        <label class="btn btn-outline-danger me-3" for="girlsRoom7Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--Males Rooms-->
+        <div class="container-fluid mt-4">
+            <h4 class="mb-3 text-center fw-semibold">Male's Rooms</h4>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="text-center">Room Number</th>
+                            <th class="text-center">Details</th>
+                            <th class="text-center">Capacity</th>
+                            <th class="text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Room 1 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 8</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#malesroom1Details" aria-expanded="false" aria-controls="room1Details">
+                                View Details
+                              </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom8" id="girlsRoom8Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom8Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom8" id="girlsRoom8Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom8Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="bg-light p-0">
+                                <div class="collapse" id="malesroom1Details">
+                                    <div class="p-3 d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="fw-semibold mb-2">Room 1 Details</h6>
+                                            <p class="mb-1"><strong>Student:</strong> Maria Santos</p>
+                                            <p class="mb-1"><strong>Grade:</strong> Grade 11</p>
+                                            <p class="mb-1"><strong>Contact:</strong> 0912-345-6789</p>
+                                            <p class="mb-0"><strong>Guardian:</strong> Rosa Santos</p>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <input type="radio" class="btn-check" name="girlsRoom1Status" id="girlsRoom1Available2" value="Available" checked>
+                                            <label class="btn btn-outline-success" for="girlsRoom1Available2">Available</label>
+
+                                            <input type="radio" class="btn-check" name="girlsRoom1Status" id="girlsRoom1Occupied2" value="Occupied">
+                                            <label class="btn btn-outline-danger" for="girlsRoom1Occupied2">Occupied</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        <!-- Room 2 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 9</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room2Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom9" id="girlsRoom9Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom9Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom9" id="girlsRoom9Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom9Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room2Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 2 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Ana Cruz</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 12</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0923-456-7890</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Pedro Cruz</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom2" id="girlsRoom2Available" value="Available">
+                                        <label class="btn btn-outline-success" for="girlsRoom2Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom2" id="girlsRoom2Occupied" value="Occupied" checked>
+                                        <label class="btn btn-outline-danger" for="girlsRoom2Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Room 3 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 10</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room3Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom10" id="girlsRoom10Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom10Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom10" id="girlsRoom10Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom10Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room3Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 3 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Isabel Reyes</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 10</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0934-567-8901</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Carmen Reyes</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom3" id="girlsRoom3Available" value="Available" checked>
+                                        <label class="btn btn-outline-success me-3" for="girlsRoom3Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom3" id="girlsRoom3Occupied" value="Occupied">
+                                        <label class="btn btn-outline-danger" for="girlsRoom3Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Room 4 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 11</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room4Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom11" id="girlsRoom11Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom11Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom11" id="girlsRoom11Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom11Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room4Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 4 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Sofia Martinez</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 11</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0945-678-9012</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Luis Martinez</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom4" id="girlsRoom4Available" value="Available" checked>
+                                        <label class="btn btn-outline-success me-3" for="girlsRoom4Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom4" id="girlsRoom4Occupied" value="Occupied">
+                                        <label class="btn btn-outline-danger" for="girlsRoom4Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Room 5 -->
+                        <tr>
+                            <td class="text-center fw-semibold">Room 12</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#room5Details">
+                                    View Details
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                0/4
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" class="btn-check" name="girlsRoom12" id="girlsRoom12Available" value="Available" checked>
+                                <label class="btn btn-outline-success me-3 active" for="girlsRoom12Available">Available</label>
+
+                                <input type="radio" class="btn-check" name="girlsRoom12" id="girlsRoom12Occupied" value="Occupied">
+                                <label class="btn btn-outline-danger" for="girlsRoom12Occupied">Occupied</label>
+                            </td>
+                        </tr>
+                        <tr class="collapse" id="room5Details">
+                            <td colspan="4" class="bg-light">
+                                <div class="p-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-2">Room 5 Details</h6>
+                                        <p class="mb-1"><strong>Student:</strong> Gabriela Torres</p>
+                                        <p class="mb-1"><strong>Grade:</strong> Grade 12</p>
+                                        <p class="mb-1"><strong>Contact:</strong> 0956-789-0123</p>
+                                        <p class="mb-0"><strong>Guardian:</strong> Elena Torres</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <input type="radio" class="btn-check" name="girlsRoom5" id="girlsRoom5Available" value="Available" checked>
+                                        <label class="btn btn-outline-success me-3" for="girlsRoom5Available">
+                                            Available
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="girlsRoom5" id="girlsRoom5Occupied" value="Occupied">
+                                        <label class="btn btn-outline-danger" for="girlsRoom5Occupied">
+                                            Occupied
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- Action Buttons -->
+        <div class="text-center mt-5">
+            <button type="button" class="btn btn-success btn-lg rounded-pill me-3 px-5 mb-3 mb-md-0" data-bs-toggle="modal" data-bs-target="#addRoomModal">
+              <i class="bi bi-plus-circle me-2"></i>Add Room
+            </button>
+
+            <button type="submit" class="btn btn-danger btn-lg rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#deleteRoomModal">
+              <i class="bi bi-trash me-2"></i>Delete Rooms
+            </button>
+        </div>
+
+
+        <!-- Delete Room Modal -->
+        <div class="modal fade" id="deleteRoomModal" tabindex="-1" aria-labelledby="addRoomModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header bg-primary">
+                        <h5 class="modal-title text-white" id="addRoomModalLabel">Delete Rooms</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form>
+
+                            <!-- Select Rooms to Delete -->
+                            <div class="mb-3">
+                                <div class="row">
+                                    <!-- Female Rooms -->
+                                    <div class="col-md-6">
+                                        <h6 class="fw-semibold mb-2">Female Rooms</h6>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="girlsRoom1" value="Girls Room 1">
+                                            <label class="form-check-label" for="girlsRoom1">Room 1</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="girlsRoom2" value="Girls Room 2">
+                                            <label class="form-check-label" for="girlsRoom2">Room 2</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="girlsRoom3" value="Girls Room 3">
+                                            <label class="form-check-label" for="girlsRoom3">Room 3</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="girlsRoom4" value="Girls Room 4">
+                                            <label class="form-check-label" for="girlsRoom4">Room 4</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="girlsRoom5" value="Girls Room 5">
+                                            <label class="form-check-label" for="girlsRoom5">Room 5</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="girlsRoom6" value="Girls Room 6">
+                                            <label class="form-check-label" for="girlsRoom6">Room 6</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="girlsRoom7" value="Girls Room 7">
+                                            <label class="form-check-label" for="girlsRoom7">Room 7</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Male Rooms -->
+                                    <div class="col-md-6">
+                                        <h6 class="fw-semibold mb-2">Male Rooms</h6>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="boysRoom8" value="Boys Room 8">
+                                            <label class="form-check-label" for="boysRoom8">Room 8</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="boysRoom9" value="Boys Room 9">
+                                            <label class="form-check-label" for="boysRoom9">Room 9</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="boysRoom10" value="Boys Room 10">
+                                            <label class="form-check-label" for="boysRoom10">Room 10</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="boysRoom11" value="Boys Room 11">
+                                            <label class="form-check-label" for="boysRoom11">Room 11</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="deleteRooms[]" id="boysRoom12" value="Boys Room 12">
+                                            <label class="form-check-label" for="boysRoom12">Room 12</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirm</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Add Room Modal -->
+        <div class="modal fade" id="addRoomModal" tabindex="-1" aria-labelledby="addRoomModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header bg-primary">
+                        <h5 class="modal-title text-white" id="addRoomModalLabel">Create New Room</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form>
+                            <!-- Room Name -->
+                            <div class="mb-3">
+                                <label for="roomName" class="form-label">Room Name</label>
+                                <input type="text" class="form-control" id="roomName" placeholder="Enter room name">
+                            </div>
+
+                            <!-- Select Sex -->
+                            <div class="mb-3">
+                                <label class="form-label d-block">Room For</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="roomSex" id="girlsRoom" value="Girls" checked>
+                                    <label class="form-check-label" for="girlsRoom">Girls</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="roomSex" id="boysRoom" value="Boys">
+                                    <label class="form-check-label" for="boysRoom">Boys</label>
+                                </div>
+                            </div>
+
+                            <!-- Available beds -->
+                            <div class="mb-3">
+                                <label class="form-label d-block">Available beds</label>
+                                <input type="number" name="" value="">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Save Room</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer class="bg-dark py-4 mt-5">
+        <div class="container text-light text-center">
+            <p class="h5 mb-2">CSPC's Boarding Selection</p>
+            <small class="text-white-50">&copy; 2025-2026 CSPC's Boarding Selection. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (optional if modal isn't used) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

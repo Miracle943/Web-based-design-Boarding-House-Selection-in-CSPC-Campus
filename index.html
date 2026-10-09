@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSPC's Boarding Selection</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="img/logo/CSPC_logo.png">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <img src="img/logo/CSPC_logo.png" width="30" height="28" alt="CSPC" class="me-2">
+                <a class="navbar-brand text-uppercase mb-0" href="#">CSPC'S Boarding Selection</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#bh">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq">FAQ</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center ms-3 gap-3">
+                        <a href="LogIn.html" class="btn btn-primary rounded-pill px-4 py-1">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="modal fade" tabindex="-1" id="booking-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Warning:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Warning alert about login requirement -->
+                    <div class="alert alert-warning" role="alert">
+                        You must be <strong>logged in to your CSPC account</strong> before booking.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- Button linking to the login page -->
+                    <a href="LogIn.html" class="btn btn-primary">Login to CSPC Account</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="modal fade" tabindex="-1" id="booking-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Warning:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Warning alert about login requirement -->
+                        <div class="alert alert-warning" role="alert">
+                            You must be <strong>logged in to your CSPC account</strong> before booking.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Button linking to the login page -->
+                        <a href="LogIn.html" class="btn btn-primary">Login to CSPC Account</a>
+                        <!-- Close button -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carousel -->
+        <section id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active c-item">
+                    <img src="img/carouselphotos/fountain.jpg" class="d-block w-100 c-img" alt="...">
+                    <div class="carousel-caption top-0 mt-4">
+                        <p class="fs-3 mt-5 text-uppercase">Welcome to CSPC'S Boarding Selection</p>
+                        <h1 class="display-1 fw-bolder text-capitalize">CSPC's Boarding Selection</h1>
+                        <button type="button" class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal" data-bs-target="#booking-modal">Book Now</button>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                    <img src="img/carouselphotos/villafuerte hall.jpg" class="d-block w-100 c-img" alt="...">
+                    <div class="carousel-caption top-0 mt-4">
+                        <p class="fs-3 mt-5 text-uppercase">Enjoy the easiest way to find registered boarding house's in Nabua</p>
+                        <h1 class="display-1 fw-bolder text-capitalize">Easy and Secure</h1>
+                        <button type="button" class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal" data-bs-target="#booking-modal">Book Now</button>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                    <img src="img/carouselphotos/dormitory.jpg" class="d-block w-100 c-img" alt="...">
+                    <div class="carousel-caption top-0 mt-4">
+                        <p class="fs-3 mt-5 text-uppercase">Your comfort and safety to find boarding houses are our top priority</p>
+                        <h1 class="display-1 fw-bolder text-capitalize">Travel with confidence</h1>
+                        <button type="button" class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal" data-bs-target="#booking-modal">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </section>
+
+        <section class="overview">
+            <div class="container h-100 d-flex align-items-center">
+                <div class="row w-100 text-center fs-4">
+                    <div class="col-xl">
+                        <i class="bi bi-geo-alt-fill me-2"></i> Has GPS location feature
+                    </div>
+
+                    <div class="col-xl">
+                        <i class="bi bi-tag-fill me-2"></i> Affordable
+                    </div>
+
+                    <div class="col-xl">
+                        <i class="bi bi-r-circle-fill me-2"></i> Registered from LGU Nabua
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Boarding Houses -->
+        <section id="bh" class="pt-5">
+            <h2 class="text-center my-4">Boarding Houses</h2>
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="img/Baylon_s Boarding houses/IMG_20250709_101305.jpg" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Baylon's Boarding House</h5>
+                                <p class="card-text">San Nicolas, Nabua</p>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="img/Junio_s Boarding houses/IMG_20250623_121832.jpg" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Junio's Boarding House</h5>
+                                <p class="card-text">San Isidro Poblacion, Nabua</p>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="img/Hernandez Boarding House/IMG_20250709_102021.jpg" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Hernandez Boarding House</h5>
+                                <p class="card-text">San Miguel, Nabua</p>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="fs-5 fw-semibold my-4 text-center">And many more...</p>
+            </div>
+        </section>
+
+        <section id="faq" class="py-5">
+            <h2 class="text-center mb-4">FAQ</h2>
+
+            <div class="container">
+                <div class="accordion w-75 mx-auto" id="accordionExample">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseOne">
+                                How can the students be sure that the boarding houses listed on the website are accredited and safe?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                The group of researchers behind the website works closely with the Local Government Unit (LGU) of Nabua and SASO from CSPC to ensure that all boarding houses listed on the website are registered and accredited. The LGU conducts regular inspections to
+                                ensure that the boarding houses meet safety and health standards.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                What is the challenges of SASO in finding Accredited boarding houses?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                The concern is that boarding houses that are not registered with the LGU Nabua may face problems like inadequate amenities, a lack of safety regulations, and lacking the providing of student safety regulations inside the boarding house. Not to mention
+                                that SASO relies heavily on the LGU Nabua for the list of boarding houses that are registered.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How you can register your boarding houses and what are the criteria for registration? 
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                To register your boarding house, you need to visit the Local Government Unit (LGU) office in Nabua and inquire about the registration process. The criteria for registration may include having a valid business permit, complying with safety and health regulations,
+                                and providing necessary documentation such as proof of ownership or lease agreement.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What are the responsibilities of SASO regarding the registration of boarding houses?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                SASO helps students find safe and legal boarding houses by maintaining a list of accredited boarding houses, conducting inspections, and providing information to students of CSPC.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Does the Website has GPS location feature to help students find the boarding houses?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Yes,</strong> The website has a GPS location feature provided by the <a href="https://www.google.com/maps">Google Map</a> that helps students find the boarding houses easily in Nabua.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-dark py-5 mt-5">
+        <div class="container text-light text-center">
+            <p class="display-5 mb-3">CSPC's Boarding Selection</p>
+            <small class="text-white-50">&copy; Copyright by CSPS's Boarding Selection.
+                <br>@2025-2026 <br>All rights reserved.</small>
+        </div>
+    </footer>
+
+</body>
+
+</html>

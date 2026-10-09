@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Website Icon-->
+    <link rel="icon" type="image/png" href="img/logo/CSPC_logo.png">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <!-- Logo and Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Camarines_Sur_Polytechnic_Colleges_Logo.png" width="30" height="30" alt="CSPC" class="me-3 rounded-circle"> Welcome, Admin
+                </a>
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Nav links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="SASO.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="inbox.html">New Application</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="registered.html">Registered</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="archive.html">Archive</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a href="LogIn.html" class="btn btn-primary rounded-pill px-4 py-1" data-bs-toggle="modal" data-bs-target="#logoutModal">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <!-- Warn the user if he/she is going to log out -->
+        <section class="modal fade" tabindex="-1" id="logoutModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Warning:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning text-center" role="alert">
+                            Are you sure you want to log out?
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="LogIn.html" class="btn btn-primary">Yes</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restore Modal -->
+        <div class="modal fade" id="restoremodal" tabindex="-1" aria-labelledby="acceptEmailModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="acceptEmailModalLabel">
+                            <i class="bi bi-arrow-clockwise me-2"></i>Restore
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body text-center">
+                        <p>Are you sure you want to restore this boarding house?</p>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+            <i class="bi bi-check-circle me-1"></i> Confirm
+          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mb-4 text-center">Archive</h2>
+
+        <!-- Hypothetical Inbox Table -->
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered align-middle shadow-sm text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th scope="col">Owner Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Boarding House</th>
+                        <th scope="col">Date</th>
+                        <th scope="col" class="text-center">Documents</th>
+                        <th scope="col" class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Juliet A. Sawchuck</td>
+                        <td>sawchuk@gmail.com</td>
+                        <td>Abonita-Sawchuk Boarding House</td>
+                        <td>Aug 30, 2025</td>
+                        <td class="text-center">
+                            <button class="btn btn-outline-primary btn-sm px-3" data-bs-toggle="modal" data-bs-target="#docsModal2">
+                        <i class="bi bi-folder2-open me-1"></i> View Docs
+                    </button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#restoremodal">
+                                <i class="bi bi-arrow-clockwise me-2"></i> Restore
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Eva G. Parina</td>
+                        <td>anding@gmail.com</td>
+                        <td>Anding Boarding House</td>
+                        <td>Aug 29, 2025</td>
+                        <td class="text-center">
+                            <button class="btn btn-outline-primary btn-sm px-3" data-bs-toggle="modal" data-bs-target="#docsModal3">
+                        <i class="bi bi-folder2-open me-1"></i> View Docs
+                    </button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#restoremodal">
+                                <i class="bi bi-arrow-clockwise me-2"></i> Restore
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Sylvia G. Baladia</td>
+                        <td>sylvia@gmail.com</td>
+                        <td>Sylvia Boarding House Rental</td>
+                        <td>Sep 18, 2025</td>
+                        <td class="text-center">
+                            <button class="btn btn-outline-primary btn-sm px-3" data-bs-toggle="modal" data-bs-target="#docsModal1">
+                        <i class="bi bi-folder2-open me-1" data-bs-target="#docsModal1" data-bs-toggle="modal"></i> View Docs
+                    </button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#restoremodal">
+                                <i class="bi bi-arrow-clockwise me-2"></i> Restore
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Juliet A. Sawchuk's Docs Modal -->
+        <div class="modal fade" id="docsModal2" tabindex="-1" aria-labelledby="docsModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="docsModal1Label">
+                            <i class="bi bi-folder2-open me-2 text-primary"></i> Juliet A. Sawchuk - Legal Documents
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <!--Business Permit Application Form-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- No.1 -->
+                                    <img src="img/Legal Documents/Business Permit Application Form/1.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Business Permit Application Form/1.jpg" target="_blank">1.jpg</a></small> Business Permit Application Form (Page 1)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- No.2 -->
+                                    <img src="img/Legal Documents/Business Permit Application Form/2.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Business Permit Application Form/2.jpg" target="_blank">2.jpg</a></small> Business Permit Application Form (Page 2)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Cedula-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" class="card-img-top rounded-top" alt="Community Tax Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" target="_blank">1.jpg</a></small>Community Tax Certificate (Cedula)</div>
+                                </div>
+                            </div>
+
+                            <!--DTI Registration Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" class="card-img-top rounded-top" alt="DTI Registration">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" target="_blank">1.jpg</a></small> DTI Registration Certificate</div>
+                                </div>
+                            </div>
+
+                            <!--Barangay Business Clearance-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Barangay Business  Clearance/1.jpg" class="card-img-top rounded-top" alt="Barangay Clearance">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Barangay Business  Clearance/1.jpg" target="_blank">1.jpg</a></small>Barangay Business Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Certificate of Building Inspection-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Certificate of Building Inspection/1.jpg" class="card-img-top rounded-top" alt="Building Inspection">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Certificate of Building Inspection/1.jpg" target="_blank">1.jpg</a></small>Certificate of Building Inspection</div>
+                                </div>
+                            </div>
+
+                            <!--Zoning Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Zoning Certificate/1.jpg" class="card-img-top rounded-top" alt="Zoning Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Zoning Certificate/1.jpg" target="_blank">1.jpg</a></small> Zoning Certificate / Locational Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Sanitary Permit / Health Clearance-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Sanitary Permit/1.jpg" class="card-img-top rounded-top" alt="Health Clearance">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Sanitary Permit/1.jpg" target="_blank">1.jpg</a></small>Sanitary Permit / Health Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Valid Fire Safety Inspection Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" class="card-img-top rounded-top" alt="Fire Safety Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" target="_blank">1.jpg</a></small>Valid Fire Safety Inspection Certificate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle me-1"></i> Close
+                  </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Eva G. Parina's Docs Modal -->
+        <div class="modal fade" id="docsModal3" tabindex="-1" aria-labelledby="docsModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="docsModal1Label">
+                            <i class="bi bi-folder2-open me-2 text-primary"></i> Eva G. Parina - Legal Documents
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <!--Business Permit Application Form-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- No.1 -->
+                                    <img src="img/Legal Documents/Business Permit Application Form/1.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Business Permit Application Form/1.jpg" target="_blank">1.jpg</a></small> Business Permit Application Form (Page 1)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- No.2 -->
+                                    <img src="img/Legal Documents/Business Permit Application Form/2.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Business Permit Application Form/2.jpg" target="_blank">2.jpg</a></small> Business Permit Application Form (Page 2)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Cedula-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" class="card-img-top rounded-top" alt="Community Tax Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" target="_blank">1.jpg</a></small>Community Tax Certificate (Cedula)</div>
+                                </div>
+                            </div>
+
+                            <!--DTI Registration Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" class="card-img-top rounded-top" alt="DTI Registration">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" target="_blank">1.jpg</a></small> DTI Registration Certificate</div>
+                                </div>
+                            </div>
+
+                            <!--Barangay Business Clearance-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Barangay Business  Clearance/1.jpg" class="card-img-top rounded-top" alt="Barangay Clearance">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Barangay Business  Clearance/1.jpg" target="_blank">1.jpg</a></small>Barangay Business Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Certificate of Building Inspection-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Certificate of Building Inspection/1.jpg" class="card-img-top rounded-top" alt="Building Inspection">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Certificate of Building Inspection/1.jpg" target="_blank">1.jpg</a></small>Certificate of Building Inspection</div>
+                                </div>
+                            </div>
+
+                            <!--Zoning Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Zoning Certificate/1.jpg" class="card-img-top rounded-top" alt="Zoning Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Zoning Certificate/1.jpg" target="_blank">1.jpg</a></small> Zoning Certificate / Locational Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Sanitary Permit / Health Clearance-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Sanitary Permit/1.jpg" class="card-img-top rounded-top" alt="Health Clearance">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Sanitary Permit/1.jpg" target="_blank">1.jpg</a></small>Sanitary Permit / Health Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Valid Fire Safety Inspection Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" class="card-img-top rounded-top" alt="Fire Safety Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" target="_blank">1.jpg</a></small>Valid Fire Safety Inspection Certificate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle me-1"></i> Close
+                  </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slyvia G. Baladia Docs Modal -->
+        <div class="modal fade" id="docsModal1" tabindex="-1" aria-labelledby="docsModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="docsModal1Label">
+                            <i class="bi bi-folder2-open me-2 text-primary"></i> Slyvia G. Baladia - Legal Documents
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <!--Business Permit Application Form-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- No.1 -->
+                                    <img src="img/Legal Documents/Business Permit Application Form/1.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Business Permit Application Form/1.jpg" target="_blank">1.jpg</a></small> Business Permit Application Form (Page 1)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- No.2 -->
+                                    <img src="img/Legal Documents/Business Permit Application Form/2.jpg" class="card-img-top rounded-top" alt="Business Permit Photo 2">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Business Permit Application Form/2.jpg" target="_blank">2.jpg</a></small> Business Permit Application Form (Page 2)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Cedula-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" class="card-img-top rounded-top" alt="Community Tax Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Community Tax Certificate (Cedula)/1.jpg" target="_blank">1.jpg</a></small>Community Tax Certificate (Cedula)</div>
+                                </div>
+                            </div>
+
+                            <!--DTI Registration Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" class="card-img-top rounded-top" alt="DTI Registration">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/DTI Registration Certificate (Sole-Proprietor)/1.jpg" target="_blank">1.jpg</a></small> DTI Registration Certificate</div>
+                                </div>
+                            </div>
+
+                            <!--Barangay Business Clearance-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Barangay Business  Clearance/1.jpg" class="card-img-top rounded-top" alt="Barangay Clearance">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Barangay Business  Clearance/1.jpg" target="_blank">1.jpg</a></small>Barangay Business Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Certificate of Building Inspection-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Certificate of Building Inspection/1.jpg" class="card-img-top rounded-top" alt="Building Inspection">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Certificate of Building Inspection/1.jpg" target="_blank">1.jpg</a></small>Certificate of Building Inspection</div>
+                                </div>
+                            </div>
+
+                            <!--Zoning Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Zoning Certificate/1.jpg" class="card-img-top rounded-top" alt="Zoning Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Zoning Certificate/1.jpg" target="_blank">1.jpg</a></small> Zoning Certificate / Locational Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Sanitary Permit / Health Clearance-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Sanitary Permit/1.jpg" class="card-img-top rounded-top" alt="Health Clearance">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Sanitary Permit/1.jpg" target="_blank">1.jpg</a></small>Sanitary Permit / Health Clearance</div>
+                                </div>
+                            </div>
+
+                            <!--Valid Fire Safety Inspection Certificate-->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" class="card-img-top rounded-top" alt="Fire Safety Certificate">
+                                    <div class="card-body text-center small">
+                                        <small class="text-muted d-block">Link of the file: <a href="img/Legal Documents/Valid Fire Safety Inspection Certificate/1.jpg" target="_blank">1.jpg</a></small>Valid Fire Safety Inspection Certificate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">
+            <i class="bi bi-x-circle me-1"></i> Close
+          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark py-4 mt-auto position-absolute bottom-0 w-100">
+        <div class="container text-light text-center">
+            <p class="h5 mb-2">CSPC's Boarding Selection</p>
+            <small class="text-white-50">
+            &copy; 2025-2026 CSPC's Boarding Selection. All rights reserved.
+          </small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
